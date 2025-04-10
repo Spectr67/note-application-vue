@@ -1,10 +1,14 @@
 <script>
+const makeId = () => ((Math.random() * 0xffff_ffff) >>> 0).toString(16)
+
 const initNote = () => ({
+  id: makeId(),
   text: '',
+  isEditable: false,
 })
 
 export default {
-  emits: ['note-added'],
+  emits: ['note-submitted'],
 
   data() {
     return {
@@ -15,7 +19,7 @@ export default {
   methods: {
     handleClick() {
       if (this.note.text) {
-        this.$emit('note-added', { ...this.note })
+        this.$emit('note-submitted', { ...this.note })
         this.note = initNote()
       }
     },

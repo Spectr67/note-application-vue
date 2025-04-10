@@ -11,11 +11,18 @@ export default {
 </script>
 
 <template>
+  {{ modelValue }}
   <div class="notes" id="notes-container">
     <noteItem
       v-for="(note, idx) of modelValue"
       :key="idx"
       :note="note"
+      @update-note="
+        $emit(
+          'update:model-value',
+          modelValue.map(mv => (mv.id === $event.id ? $event : mv))
+        )
+      "
       @remove-note="
         $emit(
           'update:model-value',

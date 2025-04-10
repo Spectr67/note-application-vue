@@ -1,10 +1,10 @@
 <script>
-import noteAdder from './components/noteAdder.vue'
+import NoteSubmitter from './components/NoteSubmitter.vue'
 import noteCounter from './components/noteCounter.vue'
 import noteList from './components/notesList.vue'
 
 export default {
-  components: { noteAdder, noteCounter, noteList },
+  components: { NoteSubmitter, noteCounter, noteList },
 
   data() {
     return {
@@ -15,13 +15,14 @@ export default {
 </script>
 
 <template>
+  {{ notes }}
   <div class="container">
     <div class="section">
       <h1>Приложение для заметок</h1>
     </div>
 
     <div class="section">
-      <noteAdder @note-added="notes.push($event)" />
+      <NoteSubmitter @note-submitted="notes.push($event)" />
     </div>
 
     <div class="section">
