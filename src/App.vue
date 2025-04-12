@@ -1,10 +1,10 @@
 <script>
 import NoteSubmitter from './components/NoteSubmitter.vue'
-import noteCounter from './components/noteCounter.vue'
-import noteList from './components/notesList.vue'
+import NotesCounter from './components/NotesCounter.vue'
+import NoteList from './components/NotesList.vue'
 
 export default {
-  components: { NoteSubmitter, noteCounter, noteList },
+  components: { NoteSubmitter, NotesCounter, NoteList },
 
   data() {
     return {
@@ -26,9 +26,9 @@ export default {
     </div>
 
     <div class="section">
-      <noteCounter :note-counter="notes.length" />
+      <NotesCounter :note-counter="notes.length" />
 
-      <noteList v-model="notes" />
+      <NoteList v-model="notes" />
     </div>
   </div>
 </template>

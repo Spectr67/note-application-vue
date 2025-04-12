@@ -1,8 +1,8 @@
 <script>
-import noteItem from './noteItem.vue'
+import NoteItem from './noteItem.vue'
 
 export default {
-  components: { noteItem },
+  components: { NoteItem },
 
   props: ['modelValue'],
 
