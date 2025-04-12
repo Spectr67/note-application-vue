@@ -1,5 +1,5 @@
 <script>
-import NoteItem from './noteItem.vue'
+import NoteItem from './NoteItem.vue'
 
 export default {
   components: { NoteItem },
@@ -13,9 +13,9 @@ export default {
 <template>
   {{ modelValue }}
   <div class="notes" id="notes-container">
-    <noteItem
-      v-for="(note, idx) of modelValue"
-      :key="idx"
+    <NoteItem
+      v-for="note of modelValue"
+      :key="note.id"
       :note="note"
       @update-note="
         $emit(
@@ -26,7 +26,7 @@ export default {
       @remove-note="
         $emit(
           'update:model-value',
-          modelValue.filter(t => t !== note)
+          modelValue.filter(t => t.id !== note.id)
         )
       "
     />

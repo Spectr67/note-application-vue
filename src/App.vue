@@ -26,7 +26,9 @@ export default {
     </div>
 
     <div class="section">
-      <NotesCounter :note-counter="notes.length" />
+      <NotesCounter :notes-count="notes.length" />
+
+      <NoteList v-model="notes" />
 
       <NoteList v-model="notes" />
     </div>

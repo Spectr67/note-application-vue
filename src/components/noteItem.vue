@@ -28,7 +28,7 @@ export default {
       ></textarea>
     </div>
     <div class="note-actions">
-      <button @click="$emit('remove-note', note)">Удалить</button>
+      <button @click="$emit('remove-note')">Удалить</button>
     </div>
   </div>
 </template>
